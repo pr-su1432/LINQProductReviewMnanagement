@@ -50,5 +50,15 @@ namespace LINQProductReviewMnanagement
                 Console.WriteLine(list.ProductID + "--->" + list.Count);
             }
         }
+        public void RetriveproductIDAndReview(List<ProductReview> productReviewList)
+        {
+            var data = (from ProductReview in productReviewList
+                          select new { ProductID = ProductReview.ProductID, Review = ProductReview.Review });
+            Console.WriteLine("Product ID|Review");
+            foreach (var list in data)
+            {
+                Console.WriteLine(list.ProductID + "--->" + list.Review);
+            }
+        }
     }
 }

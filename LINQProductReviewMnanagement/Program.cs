@@ -39,8 +39,8 @@ namespace LINQProductReviewMnanagement
             //review.getProductReview(ProductReviewList);
             //review.TopRatedRecords(ProductReviewList);
             //review.RecordsOfratingsGreaterThan3(ProductReviewList);
-            review.retriveCountOfRecords(ProductReviewList);
-
+            //review.retriveCountOfRecords(ProductReviewList);
+            review.RetriveproductIDAndReview(ProductReviewList);
 
         }
     }
