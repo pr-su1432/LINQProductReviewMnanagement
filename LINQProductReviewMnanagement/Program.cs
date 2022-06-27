@@ -10,7 +10,7 @@ namespace LINQProductReviewMnanagement
             Console.WriteLine("welcome to product review management problem ststement:");
             List<ProductReview> ProductReviewList = new List<ProductReview>()
             {
-                new ProductReview(){ProductID=1, UserID=1, Rating=5,Review="Good",IsLike=true},
+                new ProductReview(){ProductID=1, UserID=1, Rating=9,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=2, UserID=1, Rating=5,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=3, UserID=2, Rating=5,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=4, UserID=2, Rating=5,Review="Good",IsLike=true},
@@ -37,7 +37,9 @@ namespace LINQProductReviewMnanagement
             };
             LINQProductReviewMnanagement.ReviewManagement review = new LINQProductReviewMnanagement.ReviewManagement();
             //review.getProductReview(ProductReviewList);
-            review.TopRatedRecords(ProductReviewList);
+            //review.TopRatedRecords(ProductReviewList);
+            review.RecordsOfratingsGreaterThan3(ProductReviewList);
+            
         }
     }
 }
