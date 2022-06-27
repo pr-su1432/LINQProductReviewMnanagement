@@ -70,5 +70,14 @@ namespace LINQProductReviewMnanagement
                 Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "IsLike:-" + list.IsLike);
             }
         }
+        public void retriveProductIDAndReviewUsingSelectLINQ(List<ProductReview> productReviewList)
+        {
+            var data = productReviewList.Select(Reviews => new { ProductID = Reviews.ProductID, Review = Reviews.Review });
+            Console.WriteLine("Product ID|Review");
+            foreach (var list in data)
+            {
+                Console.WriteLine(list.ProductID + "--->" + list.Review);
+            }
+        }
     }
 }
