@@ -79,7 +79,7 @@ namespace LINQProductReviewMnanagement
                 Console.WriteLine(list.ProductID + "--->" + list.Review);
             }
         }
-        public void createDatatable(List<ProductReview> ProductReviewList)
+        public  DataTable createDatatable(List<ProductReview> ProductReviewList)
         {
             DataTable result = new DataTable();
             result.Columns.Add("ProductID", typeof(Int32));
@@ -93,6 +93,18 @@ namespace LINQProductReviewMnanagement
             }
             Console.WriteLine("Records in DataTable.");
             foreach (var list in result.AsEnumerable())
+            {
+                Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID") + " " + "Rating:- " + list.Field<int>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "IsLike:- " + list.Field<bool>("IsLike"));
+            }
+            return result;
+        }
+        public void retriveLikeValueTrue(DataTable table)
+        {
+            var data = (from productReview in table.AsEnumerable()
+                          where productReview.Field<bool>("IsLike") == true
+                          select productReview);
+            Console.WriteLine("Records Who's value is true:");
+            foreach (var list in data.AsEnumerable())
             {
                 Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID") + " " + "Rating:- " + list.Field<int>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "IsLike:- " + list.Field<bool>("IsLike"));
             }

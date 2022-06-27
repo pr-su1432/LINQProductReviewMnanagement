@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 namespace LINQProductReviewMnanagement
 {
@@ -7,6 +8,8 @@ namespace LINQProductReviewMnanagement
     {
         public static void Main(string[] args)
         {
+            LINQProductReviewMnanagement.ReviewManagement review = new LINQProductReviewMnanagement.ReviewManagement();
+            
             Console.WriteLine("welcome to product review management problem ststement:");
             List<ProductReview> ProductReviewList = new List<ProductReview>()
             {
@@ -35,7 +38,7 @@ namespace LINQProductReviewMnanagement
                 new ProductReview(){ProductID=24, UserID=10, Rating=5,Review="nice",IsLike=false},
                 new ProductReview(){ProductID=25, UserID=10, Rating=5,Review="nice",IsLike=false},
             };
-            LINQProductReviewMnanagement.ReviewManagement review = new LINQProductReviewMnanagement.ReviewManagement();
+
             //review.getProductReview(ProductReviewList);
             //review.TopRatedRecords(ProductReviewList);
             //review.RecordsOfratingsGreaterThan3(ProductReviewList);
@@ -43,7 +46,9 @@ namespace LINQProductReviewMnanagement
             //review.RetriveproductIDAndReview(ProductReviewList);
             //review.recorsSkipTop5Records(ProductReviewList);
             //review.retriveProductIDAndReviewUsingSelectLINQ(ProductReviewList);
-            review.createDatatable(ProductReviewList);
+            //review.createDatatable(ProductReviewList);
+            DataTable table = review.createDatatable(ProductReviewList);
+            review.retriveLikeValueTrue(table);
         }
     }
 }
