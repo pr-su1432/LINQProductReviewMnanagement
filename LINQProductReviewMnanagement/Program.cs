@@ -38,8 +38,10 @@ namespace LINQProductReviewMnanagement
             LINQProductReviewMnanagement.ReviewManagement review = new LINQProductReviewMnanagement.ReviewManagement();
             //review.getProductReview(ProductReviewList);
             //review.TopRatedRecords(ProductReviewList);
-            review.RecordsOfratingsGreaterThan3(ProductReviewList);
-            
+            //review.RecordsOfratingsGreaterThan3(ProductReviewList);
+            review.retriveCountOfRecords(ProductReviewList);
+
+
         }
     }
 }
