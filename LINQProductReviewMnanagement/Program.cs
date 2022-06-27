@@ -42,8 +42,8 @@ namespace LINQProductReviewMnanagement
             //review.retriveCountOfRecords(ProductReviewList);
             //review.RetriveproductIDAndReview(ProductReviewList);
             //review.recorsSkipTop5Records(ProductReviewList);
-            review.retriveProductIDAndReviewUsingSelectLINQ(ProductReviewList);
-
+            //review.retriveProductIDAndReviewUsingSelectLINQ(ProductReviewList);
+            review.createDatatable(ProductReviewList);
         }
     }
 }
