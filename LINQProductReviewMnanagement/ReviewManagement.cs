@@ -109,6 +109,19 @@ namespace LINQProductReviewMnanagement
                 Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID") + " " + "Rating:- " + list.Field<int>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "IsLike:- " + list.Field<bool>("IsLike"));
             }
         }
+        public void findAvgOfProductID(DataTable data)
+        {
+            var result = data.AsEnumerable().GroupBy(table => table.Field<int>("ProductID")).Select(field => new
+            {
+                ProductID = field.Key,
+                Average = field.Average(x => x.Field<int>("Rating"))
+            });
+            Console.WriteLine("Average rating of each product ID.");
+            foreach (var list in result)
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " --->" + "Average:- " + list.Average);
+            }
+        }
     }
 }
 
