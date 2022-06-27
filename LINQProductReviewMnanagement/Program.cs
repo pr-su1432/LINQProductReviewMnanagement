@@ -25,9 +25,9 @@ namespace LINQProductReviewMnanagement
                 new ProductReview(){ProductID=14, UserID=1, Rating=5,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=15, UserID=1, Rating=5,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=16, UserID=10, Rating=2,Review="Good",IsLike=true},
-                new ProductReview(){ProductID=17, UserID=10, Rating=5,Review="Good",IsLike=true},
-                new ProductReview(){ProductID=18, UserID=10, Rating=5,Review="Good",IsLike=true},
-                new ProductReview(){ProductID=19, UserID=10, Rating=5,Review="Good",IsLike=true},
+                new ProductReview(){ProductID=17, UserID=10, Rating=6,Review="Good",IsLike=true},
+                new ProductReview(){ProductID=18, UserID=10, Rating=7,Review="Good",IsLike=true},
+                new ProductReview(){ProductID=19, UserID=10, Rating=8,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=20, UserID=10, Rating=5,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=21, UserID=10, Rating=5,Review="nice",IsLike=true},
                 new ProductReview(){ProductID=22, UserID=10, Rating=2,Review="nice",IsLike=true},
@@ -36,8 +36,8 @@ namespace LINQProductReviewMnanagement
                 new ProductReview(){ProductID=25, UserID=10, Rating=5,Review="nice",IsLike=true},
             };
             LINQProductReviewMnanagement.ReviewManagement review = new LINQProductReviewMnanagement.ReviewManagement();
-            review.getProductReview(ProductReviewList);
-
+            //review.getProductReview(ProductReviewList);
+            review.TopRatedRecords(ProductReviewList);
         }
     }
 }
