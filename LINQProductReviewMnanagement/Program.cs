@@ -47,9 +47,15 @@ namespace LINQProductReviewMnanagement
             //review.recorsSkipTop5Records(ProductReviewList);
             //review.retriveProductIDAndReviewUsingSelectLINQ(ProductReviewList);
             //review.createDatatable(ProductReviewList);
-            DataTable table = review.createDatatable(ProductReviewList);
+
+            //DataTable table = review.createDatatable(ProductReviewList);
             //review.retriveLikeValueTrue(table);
-            review.findAvgOfProductID(table);
+
+           // DataTable table = review.createDatatable(ProductReviewList);
+            // review.findAvgOfProductID(table);
+
+            DataTable table = review.createDatatable(ProductReviewList);
+            review.reviewMessageNice(table);
         }
     }
 }
