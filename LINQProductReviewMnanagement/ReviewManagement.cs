@@ -133,7 +133,18 @@ namespace LINQProductReviewMnanagement
                 Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID") + " " + "Rating:- " + list.Field<int>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "IsLike:- " + list.Field<bool>("IsLike"));
             }
         }
-
+        public void retrieveUserID10Records(DataTable table)
+        {
+            var data = from productReview in table.AsEnumerable()
+                       where productReview.Field<int>("UserID") == 10
+                       orderby productReview.Field<int>("Rating") descending
+                       select productReview;
+            Console.WriteLine("Records who's value is userid 10:");
+            foreach (var list in data)
+            {
+                Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID") + " " + "Rating:- " + list.Field<int>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "IsLike:- " + list.Field<bool>("IsLike"));
+            }
+        }
     }
 }
 
